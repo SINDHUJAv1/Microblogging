@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MicroGram</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            MicroGram
+        </div>
+
+        <div class="nav-icons">
+
+            <a href="#home">
+                <i class="fa-solid fa-house"></i>
+            </a>
+
+            <a href="#create">
+                <i class="fa-solid fa-square-plus"></i>
+            </a>
+
+            <a href="#profile">
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Container -->
+    <main class="container">
+
+
+        <!-- Create Post -->
+        <section id="create" class="create-post">
+
+            <h2>Create New Post</h2>
+
+            <textarea
+                id="captionInput"
+                placeholder="Write a caption..."
+                maxlength="200"></textarea>
+
+            <input
+                type="file"
+                id="imageInput"
+                accept="image/*">
+
+            <button onclick="createPost()">
+                <i class="fa-solid fa-plus"></i>
+                Create Post
+            </button>
+
+        </section>
+
+
+        <!-- Feed -->
+        <section id="home">
+
+            <div id="posts">
+
+
+                <!-- Default Post -->
+
+                <div class="post">
+
+                    <!-- Post Header -->
+
+                    <div class="post-header">
+
+                        <div class="user-info">
+
+                            <div class="avatar">
+                                U
+                            </div>
+
+                            <strong>User</strong>
+
+                        </div>
+
+                        <i class="fa-solid fa-ellipsis"></i>
+
+                    </div>
+
+
+                    <!-- Post Image -->
+
+                    <img
+                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                        class="post-image"
+                        alt="Post Image">
+
+
+                    <!-- Post Actions -->
+
+                    <div class="post-actions">
+
+                        <div class="left-actions">
+
+                            <button class="like-btn"
+                                onclick="toggleLike(this)">
+
+                                <i class="fa-regular fa-heart"></i>
+
+                            </button>
+
+
+                            <button class="comment-btn">
+
+                                <i class="fa-regular fa-comment"></i>
+
+                            </button>
+
+
+                            <button>
+
+                                <i class="fa-regular fa-paper-plane"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <button class="save-btn"
+                            onclick="toggleSave(this)">
+
+                            <i class="fa-regular fa-bookmark"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Likes -->
+
+                    <div class="likes">
+
+                        <span class="like-count">0</span> likes
+
+                    </div>
+
+
+                    <!-- Caption -->
+
+                    <div class="caption">
+
+                        <strong>User</strong>
+
+                        <span>Welcome to MicroGram!</span>
+
+                    </div>
+
+
+                    <!-- Comments -->
+
+                    <div class="comments">
+
+                        <p class="view-comments">
+                            No comments yet
+                        </p>
+
+                        <div class="comment-list"></div>
+
+                    </div>
+
+
+                    <!-- Add Comment -->
+
+                    <div class="add-comment">
+
+                        <input
+                            type="text"
+                            placeholder="Add a comment..."
+                            class="comment-input">
+
+                        <button
+                            onclick="addComment(this)">
+
+                            Post
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Profile -->
+
+        <section id="profile" class="profile">
+
+            <h2>My Profile</h2>
+
+            <div class="profile-info">
+
+                <div class="profile-avatar">
+                    U
+                </div>
+
+                <div>
+
+                    <h3>User</h3>
+
+                    <p>
+                        <span id="postCount">1</span>
+                        Posts
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
